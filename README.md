@@ -1,1 +1,1 @@
-# weather_app_vue
+# Weather App (Vue Js)
