@@ -3,10 +3,12 @@
       <Navigation></Navigation>
       <div class="test">
         <div class="container">
-            <div class="row">
-                <Inventory @newitemadd="addtocart" :items="items"></Inventory>
-                <Cart @removeitem ="removeItem" :cart="cart"></Cart>
+          <div class="row">
+            <div class="col-sm-9">
+              <router-view></router-view>
             </div>
+            <Cart @removeitem ="removeItem" :cart="cart"></Cart>
+          </div>
       </div>
     </div>
   </div>
@@ -14,14 +16,12 @@
 
 <script>
 import Cart from './components/Cart'
-import Inventory from './components/Inventory'
 import Navigation from './components/Navigation'
 import data from './data.js'
 export default {
   components:{
     Cart, 
-    Navigation,
-    Inventory
+    Navigation
   },
   data(){
     return {

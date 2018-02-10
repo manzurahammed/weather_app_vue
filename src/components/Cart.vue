@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  props:['cart'],
+
   computed:{
     total(){
       var total = 0;
@@ -28,11 +28,14 @@ export default {
         total += parseFloat(item.price.replace('$',''))
       })
       return total.toFixed(2)
+    },
+    cart(){
+      return this.$store.getters.getcart
     }
   },
   methods:{
     removeItem(index){
-      this.$emit('removeitem',index)
+      this.$store.commit('removeitem',index)
     }
   }
 }
